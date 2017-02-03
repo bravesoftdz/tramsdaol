@@ -1,0 +1,6 @@
+.vscode/
+
+helios/core/__pycache__/
+helios/core/migrations/__pycache__/
+helios/helios/__pycache__/
+
