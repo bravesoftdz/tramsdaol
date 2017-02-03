@@ -1,6 +1,19 @@
-.vscode/
+.vscode/*
 
-helios/core/__pycache__/
-helios/core/migrations/__pycache__/
-helios/helios/__pycache__/
+helios/core/__pycache__
+helios/core/migrations/__pycache__
+helios/helios/__pycache__
+
+client/dist
+client/tmp
+client/node_modules
+client/npm-debug.log
+client/testem.log
+client/typings
+
+client/e2e/*.js
+client/e2e/*.js
+
+client/.DS_Store
+client/Thumbs.db
 
