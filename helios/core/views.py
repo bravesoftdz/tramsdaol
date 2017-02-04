@@ -2,8 +2,8 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 
-from core.helper import track
-from core.helper import get_file
+# from core.helper import track
+# from core.helper import get_file
 
 class TemperatureView(ViewSet):
     """
@@ -19,9 +19,13 @@ class TemperatureView(ViewSet):
         if not address:
             return Response('Invalid address', status=status.HTTP_400_BAD_REQUEST)
 
-        data = {}
+        data = {
+            'country': 'BR',
+            'city': 'Florianopolis',
+            'degrees': 78.98,
+        }
 
-        track('192.168.0.1', address, data)
+        # track('192.168.0.1', address, data)
 
         return Response(data)
 

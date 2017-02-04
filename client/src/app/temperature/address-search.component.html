@@ -1,0 +1,10 @@
+<p>
+
+  <input type="text" #address>
+  <button (click)="findTemperature(address.value)">
+      show me the current temperature
+  </button>
+
+  <app-temperature-card [temperature]="temperature"></app-temperature-card>
+
+</p>
