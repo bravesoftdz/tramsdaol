@@ -1,4 +1,4 @@
-enum TEMPERATURE_UNIT {
+export enum TEMPERATURE_UNIT {
     Celsius = 1,
     Fahrenheit,
 }

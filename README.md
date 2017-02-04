@@ -32,7 +32,8 @@ I dont make this project alone, I use some content to undestand some things and 
 
 I choice the best content that I used
 
-
+https://kendaleiv.com/angular-2-mockbackend-service-testing-template-using-testbed/
+https://medium.com/google-developer-experts/angular-2-unit-testing-with-jasmine-defe20421584#.4k7g5aczp
 http://www.codexworld.com/get-zipcode-from-address-using-google-maps-api-php/
 http://gis.stackexchange.com/questions/33966/google-geocoder-lookup-get-postal-code-by-country-and-city
 http://stackoverflow.com/questions/311627/how-to-print-date-in-a-regular-format-in-python

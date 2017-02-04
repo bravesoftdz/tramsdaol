@@ -11,11 +11,11 @@ export class AddressSearchComponent {
 
   temperature: Temperature = new Temperature();
 
-  constructor( private temperatureService: TemperatureService) { }
+  constructor(private temperatureService: TemperatureService) { }
 
   findTemperature(address: string) {
     this.temperatureService.getByAddress(address)
-      .then( temperature => this.temperature = temperature )
+      .subscribe(temperature => this.temperature = temperature, error => console.log(error))
   }
 
 }

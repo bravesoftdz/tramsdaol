@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Temperature } from './temperature.model';
 
 /*
- *
+ * Format to display the country and city of the current temperature
  * 
  * Usage:
  *   temperature | label
@@ -13,9 +13,15 @@ import { Temperature } from './temperature.model';
  * 
 */
 
-@Pipe({name: 'label'})
+@Pipe({ name: 'label' })
 export class LabelPipe implements PipeTransform {
   transform(value: Temperature): string {
-      return `${value.city || ''}, ${value.country || ''}`;
+
+    if (value instanceof Temperature) {
+      return `${value.city}, ${value.country}`;  
+    };
+
+    throw new Error('Requires a object type Temperature as input');
+    
   }
 }

@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, URLSearchParams  } from '@angular/http';
+import { Response, Http, Headers, URLSearchParams  } from '@angular/http';
+
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+
+import {Observable} from 'rxjs/Observable';
+
+import { environment } from '../../environments/environment';
 
 import { Temperature } from './temperature.model';
 import { Serialization } from './temperature.helper';
 
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class TemperatureService {
@@ -15,22 +22,22 @@ export class TemperatureService {
 
     constructor(private http: Http) {}
 
-    getByAddress(address: string): Promise<Temperature> {
+    getByAddress(address: string): Observable<Temperature> {
 
         let search = new URLSearchParams();
         search.set('address', address);
-
-        let url = 'http://127.0.0.1:8000/api/temperature/';
+        
+        let url = `${environment.url}/temperature/`;
 
         return this.http.get(url, {  search: search, headers: this.headers})
-               .toPromise()
-               .then(response => Serialization.to(Temperature, response.json()))
-               .catch(this.showError);
+                .map((response: Response) => {
+                    return Serialization.to(Temperature, response.json());
+                })    
+                .catch(this.handleServerError)
     }
 
-    private showError(error: any): Promise<any> {
-        console.error('An error occurred', error);
-        return Promise.reject(error.message || error);
+    private handleServerError(error: Response) {
+        return Observable.throw(error.text() || 'Server error');
     }
 
 }
