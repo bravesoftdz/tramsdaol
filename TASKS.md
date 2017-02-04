@@ -1,7 +1,8 @@
 [] Documentacao de classe e metodos
 [] Layout frontend
 [] Tests
-[] seprarar front/back
+[] freeze dependences
+[] remover os diretorios de cache do python
 
 
 [x] Create a comectiom with PostgreSQL
