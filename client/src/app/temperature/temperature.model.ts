@@ -7,6 +7,9 @@ export class Temperature {
     country: string;
     city: string;
     degrees: number;
+    address: string;
+    lat:  number;
+    lng: number;
 
     unit: TEMPERATURE_UNIT =  TEMPERATURE_UNIT.Fahrenheit;
 
@@ -20,3 +23,6 @@ export class Temperature {
   
     }
 }
+
+
+

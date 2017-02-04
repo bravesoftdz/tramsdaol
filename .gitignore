@@ -4,6 +4,10 @@ helios/core/__pycache__
 helios/core/migrations/__pycache__
 helios/helios/__pycache__
 
+helios/core/management/__pycache__
+helios/core/management/commands/__pycache__/
+elios/core/services/__pycache__/
+
 client/dist
 client/tmp
 client/node_modules

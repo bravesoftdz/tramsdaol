@@ -9,13 +9,16 @@ class Track(models.Model):
     term = models.CharField(max_length=50, null=False, blank=False)
     result = JSONField(null=False, blank=True)
 
-    def as_dict(self) -> dict:
-        return {
-            'id': self.ip_address,
-            'search_datetime': self.search_datetime,
-            'term': self.term,
-            'result': self.result,
-    }
-
     class Meta:
         ordering = ['search_datetime']
+
+    def as_report(self):
+        '''
+        ass
+        '''
+        return {
+            'ip_address': self.ip_address,
+            'search_datetime': self.search_datetime.strftime('%Y-%m-%d %H:%M %Z'),
+            'term': self.term,
+            'result': ', '.join('='.join((str(key),str(value))) for key, value in self.result.items()) 
+    }

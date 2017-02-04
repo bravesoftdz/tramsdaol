@@ -16,15 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 
 from rest_framework import routers
-from core.views import TemperatureView, ExportView
+from core.views import TemperatureView
 
 from django.contrib import admin
 
 
 router = routers.DefaultRouter()
 router.register(r'temperature', TemperatureView, base_name='temperature')
-router.register(r'export', ExportView, base_name='export')
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

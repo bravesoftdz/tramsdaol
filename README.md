@@ -24,6 +24,10 @@ You need to define a envarioment varible called DATABASE_URL, with as:
 DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 ```
 
+Fetures futuras
+
+IPv6
+
 References:
 
 
