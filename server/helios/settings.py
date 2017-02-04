@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.postgres',
+
     'core',
 
     'rest_framework',
@@ -147,3 +149,5 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = True
 
 ENABLED_DATA_TRACKING = True
+
+CACHE_VALIDATION_TIME = 60

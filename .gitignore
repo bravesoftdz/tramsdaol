@@ -1,12 +1,12 @@
 .vscode/*
 
-helios/core/__pycache__
-helios/core/migrations/__pycache__
-helios/helios/__pycache__
+server/helios/core/__pycache__
+server/helios/core/migrations/__pycache__
+server/helios/helios/__pycache__
 
-helios/core/management/__pycache__
-helios/core/management/commands/__pycache__/
-elios/core/services/__pycache__/
+server/helios/core/management/__pycache__
+server/helios/core/management/commands/__pycache__/
+server/helios/core/services/__pycache__/
 
 client/dist
 client/tmp

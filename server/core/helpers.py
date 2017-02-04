@@ -2,6 +2,7 @@ import json
 import requests
 
 from django.conf import settings
+
 from core.models import Track
 
 
@@ -20,7 +21,6 @@ def head_list(value):
         blblbl
     '''
     return (value or [None])[0]
-
 
 def track(ip_address, term, result):
     '''

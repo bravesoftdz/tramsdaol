@@ -1,3 +1,7 @@
+[] Documentacao de classe e metodos
+[] Layout frontend
+[] Tests
+[] seprarar front/back
 
 
 [x] Create a comectiom with PostgreSQL
