@@ -17,9 +17,6 @@ class Track(models.Model):
         ordering = ['search_datetime']
 
     def as_report(self):
-        '''
-        ass
-        '''
         return {
             'ip_address': self.ip_address,
             'search_datetime': self.search_datetime.strftime('%Y-%m-%d %H:%M %Z'),

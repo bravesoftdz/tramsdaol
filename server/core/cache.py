@@ -11,7 +11,6 @@ from core.services.weather import w
 
 
 def find_cache_geographic_coordinate(address):
-
     data = GeographicCoordinate.objects.filter(address__search=address).first()
     if data:
         return data.lat, data.lng, data.address
@@ -64,7 +63,9 @@ def search_temperature_by_address(search_address):
     lat, lng, address = find_cache_geographic_coordinate(search_address)
     if not all((lat, lng, address)):
         lat, lng, address = g('google').get_geographic_coordinate(search_address)
-        store_cache_geographic_coordinate(lat, lng, address)
+        # Store in cache the raw address, because the Geolocation service 
+        # may return the same address for different search terms
+        store_cache_geographic_coordinate(lat, lng, search_address)
 
     data = find_cache_temperature(lat, lng)
     if not data:

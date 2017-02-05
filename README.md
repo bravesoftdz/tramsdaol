@@ -4,6 +4,15 @@
 
 * setup DB
 
+* statup project (developlent mode)
+
+Dont forget you need to set the DATABASE_URL
+
+ run application
+
+ run tests
+
+
 * referencias
 
 How to setup this project 
