@@ -141,6 +141,9 @@ class TestHelperMethods(unittest.TestCase):
             '1211.22.22.22',
             '123.666.234.076',
             '1777.22.111',
+            '1777.22.',
+            '1777.22.111.dede',
+            '.0.0.0',
         ]
         for ip in ips:
             self.assertFalse(is_valid_ipv4(ip), ip)

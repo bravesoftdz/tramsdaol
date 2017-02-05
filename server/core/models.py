@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 
 class Track(models.Model):
 
-    ip_address = models.GenericIPAddressField(protocol='IPv4')
+    ip_address = models.GenericIPAddressField(protocol='IPv4', db_index=True)
     search_datetime = models.DateTimeField(auto_now_add=True)
     term = models.CharField(max_length=50, null=False, blank=False)
     result = JSONField(null=False, blank=True)
@@ -24,7 +24,7 @@ class Track(models.Model):
             'search_datetime': self.search_datetime.strftime('%Y-%m-%d %H:%M %Z'),
             'term': self.term,
             'result': ', '.join('='.join((str(key),str(value))) for key, value in self.result.items()) 
-    }
+        }
 
 
 class GeographicCoordinate(models.Model):
@@ -48,6 +48,9 @@ class CacheResult(models.Model):
 
     class Meta:
         unique_together = ('lat', 'lng',)
+        index_together = [
+            ('lat', 'lng'),
+        ]
 
 
 class CacheValidManager(models.Manager):

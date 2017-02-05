@@ -1,0 +1,11 @@
+dj-database-url==0.4.2
+Django==1.10.5
+django-cors-headers==2.0.1
+django-ipware==1.1.6
+djangorestframework==3.5.3
+gunicorn==19.6.0
+inhoj==2.1.2
+meinheld==0.6.1
+psycopg2==2.6.2
+requests==2.13.0
+Twisted==16.6.0

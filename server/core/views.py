@@ -2,11 +2,17 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import status
 
+from ipware.ip import get_ip
+
 from core.cache import search_temperature_by_address
 from core.helpers import track
 
 
 class TemperatureView(ViewSet):
+
+    def __tracking(self, search_address, data):
+        ip_address = get_ip(self.request)
+        track(ip_address, search_address, data)
 
     def list(self, *args, **kwargs):
 
@@ -15,6 +21,7 @@ class TemperatureView(ViewSet):
             return Response('Invalid address', status=status.HTTP_400_BAD_REQUEST)
 
         data = search_temperature_by_address(search_address)
-        track('192.168.0.1', search_address, data)
+
+        self.__tracking(search_address, data)
 
         return Response(data)
