@@ -20,4 +20,4 @@ class Command(BaseCommand):
         export = ExportTracking(format_file, ip_address)
         export.run()
 
-        print('Export Completed')
+        print('Export Completed!')

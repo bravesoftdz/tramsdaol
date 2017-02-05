@@ -1,5 +1,7 @@
 from core.models import Track, CacheResult, GeographicCoordinate, CacheValidResult
 
+from core.services.geolocation import g
+from core.services.weather import w
 
 def find_cache_geographic_coordinate(address):
     """

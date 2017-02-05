@@ -2,8 +2,7 @@
 [] Layout frontend
 [] Tests
 [] freeze dependences
-[] remover os diretorios de cache do python
-
+[] unique toggeter
 
 [x] Create a comectiom with PostgreSQL
  	postgres -D /usr/local/var/postgres

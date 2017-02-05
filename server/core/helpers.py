@@ -5,6 +5,11 @@ from django.conf import settings
 
 from core.models import Track
 
+# http://stackoverflow.com/questions/1305532/convert-python-dict-to-object
+class DictToObject:
+    def __init__(self, **entries):
+        self.__dict__.update(entries)
+
 
 def http_get(url):
     '''
