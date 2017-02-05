@@ -3,7 +3,11 @@
 [] freeze dependences
 [] get IP addres
 [] PyLint
-[] toats error
+[] Toats error
+[] Index na tabela de tracking
+
+
+https://github.com/akserg/ng2-slim-loading-bar
 
 [x] Create a comectiom with PostgreSQL
  	postgres -D /usr/local/var/postgres
@@ -12,4 +16,3 @@
 	createdb <db>
     export DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 
-https://github.com/t4joel/get-address-by-google-maps-api/blob/master/scripts/geoLocationFactory.js

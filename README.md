@@ -1,3 +1,11 @@
+* about this project
+
+* install dependences
+
+* setup DB
+
+* referencias
+
 How to setup this project 
 
 Fisrt off all you nedd to create a virtualenv with as dependeces.
@@ -24,18 +32,22 @@ You need to define a envarioment varible called DATABASE_URL, with as:
 DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 ```
 
+
+
 Fetures futuras
 
 IPv6
+
 
 References:
 
 
 
-I dont make this project alone, I use some content to undestand some things and imprmenvetm my conde
-
+I dont make this project alone,
+I use some content to undestand some things and imprmenvetm my conde
 I choice the best content that I used
 
+https://docs.python.org/3/whatsnew/3.6.html
 http://klen.github.io/py-frameworks-bench/
 https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app
 https://kendaleiv.com/angular-2-mockbackend-service-testing-template-using-testbed/

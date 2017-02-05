@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { ToastrService } from 'toastr-ng2';
+import { Serialization } from './temperature.helper';
+import { Component, Input } from '@angular/core';
 
 import { TemperatureService } from './temperature.service';
 import { Temperature } from './temperature.model';
@@ -9,13 +11,18 @@ import { Temperature } from './temperature.model';
 })
 export class AddressSearchComponent {
 
-  temperature: Temperature = new Temperature();
+  @Input() temperature: Temperature;
 
-  constructor(private temperatureService: TemperatureService) { }
+  constructor(private temperatureService: TemperatureService, private toastrService: ToastrService) { }
 
   findTemperature(address: string) {
-    this.temperatureService.getByAddress(address)
-      .subscribe(temperature => this.temperature = temperature, error => console.log(error))
+
+    if (address === '') {
+      this.toastrService.info('Uhun', 'You need to put an address :-)')
+    } else {
+      this.temperatureService.getByAddress(address)
+        .subscribe(temperature => Serialization.copyFrom(this.temperature, temperature), error => console.log(error))
+    }
   }
 
 }

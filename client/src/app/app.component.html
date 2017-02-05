@@ -1,7 +1,36 @@
- 
-  <app-address-search>
-  </app-address-search>
+<ng2-slim-loading-bar></ng2-slim-loading-bar>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-sm-12">
+            <div class="card">
+                <div class="card-block">
+                    <div class="row" style="min-height: 150px;">
+                        <div class="col-md-5">
+                            <app-address-search [temperature]="temperature"></app-address-search>
+                        </div>
+                        <div class="col-md-7 text-center">
+                            <app-temperature-card [temperature]="temperature"></app-temperature-card>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <sebm-google-map [latitude]="temperature.lat" [longitude]="temperature.lng">
+                                <sebm-google-map-marker [latitude]="temperature.lat" [longitude]="temperature.lng"></sebm-google-map-marker>
+                            </sebm-google-map>
+                        </div>
+
+                    </div>
 
 
-
-Made with <span class="love">♥</span> by <a href="http://johnidouglas.com/" target="_blank">Johni Douglas Marangon</a>
+                    <div class="row">
+                        <div class="col text-center">
+                            Made with <span class="love">♥</span> by <a href="http://johnidouglas.com/" target="_blank">Johni Douglas Marangon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,12 @@
-{{temperature | label}} {{temperature.do}}
-
-<br> Address by Google: {{temperature.address}}
-
-<sebm-google-map [latitude]="temperature.lat" [longitude]="temperature.lng">
-    <sebm-google-map-marker [latitude]="temperature.lat" [longitude]="temperature.lng"></sebm-google-map-marker>
-</sebm-google-map>
+<div class="row" *ngIf="temperature.hasCity">
+    <div class="col-md-12">
+        <h4>{{temperature.city}}, {{temperature.country}}</h4>        
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <span class="booticon-lg">
+            {{temperature.do}}
+        </span>
+    </div>
+</div>

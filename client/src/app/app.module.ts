@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import { ToastrModule } from 'toastr-ng2';
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 
 import { AppComponent } from './app.component';
 import { TemperatureCardComponent } from './temperature/temperature-card.component';
@@ -25,7 +27,10 @@ import { TemperatureService } from './temperature/temperature.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+
     AgmCoreModule.forRoot(),
+    ToastrModule.forRoot(),
+    SlimLoadingBarModule.forRoot(),
   ],
   providers: [
     TemperatureService,

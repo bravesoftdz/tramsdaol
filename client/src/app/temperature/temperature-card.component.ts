@@ -6,10 +6,13 @@ import { Temperature } from './temperature.model';
   selector: 'app-temperature-card',
   templateUrl: './temperature-card.component.html',
   styles: [`
-    .sebm-google-map-container {
-       height: 300px;
-     }
-  `],
+    .booticon-lg {
+      width: 144px;
+      height: 144px;
+      font-size: 80px;
+      line-height: 140px;
+  }
+  `]
 })
 
 export class TemperatureCardComponent {

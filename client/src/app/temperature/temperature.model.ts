@@ -23,7 +23,10 @@ export class Temperature {
             default:
                 return null;
         }
-  
+    }
+
+    get hasCity() {
+        return Boolean(this.city && this.country);
     }
 }
 

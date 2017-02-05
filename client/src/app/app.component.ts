@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Temperature } from './temperature/temperature.model';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 
-export class AppComponent { ß}
+export class AppComponent { 
+
+    temperature: Temperature = new Temperature();
+
+}

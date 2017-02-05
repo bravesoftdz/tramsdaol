@@ -28,5 +28,21 @@ export class Serialization {
         Object.keys(data).forEach( key => obj[key] =data[key] );
         return obj;
     }
+
+    /*
+    * 
+    * Copy all properties from object source to destination 
+    * 
+    * This function should be used when it is necessary to preserve the object instance type.
+    *
+    * Usage:
+    *   let foo = new Foo();
+    *   Serialization.copyFrom(foo, { id: 2, name: 'Foouuu' })
+    * 
+    */
+
+    static copyFrom<T>(destination: T, source: T ) {
+        Object.keys(source).map( key => destination[key] = source[key] )
+    }
 }
 

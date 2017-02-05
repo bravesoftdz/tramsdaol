@@ -21,4 +21,32 @@ describe('Model: Temperature', () => {
         expect(temperature.do).toBe(null);
     });
 
+    it('should return false if city and country was not defined)', () => {
+        let temperature = new Temperature();
+        temperature.degrees = 102.01;
+        temperature.unit = TEMPERATURE_UNIT.Celsius;
+
+        expect(temperature.hasCity).toBe(false);
+    });
+
+    it('should return true if city and country was defined)', () => {
+        let temperature = new Temperature();
+        temperature.city = 'Barra Bonita';
+        temperature.country = 'BR';
+        temperature.degrees = 102.01;
+        temperature.unit = TEMPERATURE_UNIT.Celsius;
+
+        expect(temperature.hasCity).toBe(true);
+    });
+
+    it('should return false if city was not defined)', () => {
+        let temperature = new Temperature();
+        temperature.degrees = 102.01;
+        temperature.country = 'BR';
+        temperature.unit = TEMPERATURE_UNIT.Celsius;
+
+        expect(temperature.hasCity).toBe(false);
+    });
+
+
 });

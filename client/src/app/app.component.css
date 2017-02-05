@@ -20,3 +20,7 @@
 @keyframes love {
   to {transform: scale(1.2);}
 }
+
+.sebm-google-map-container {
+    height: 300px;
+}

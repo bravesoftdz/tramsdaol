@@ -1,3 +1,5 @@
+import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
+import { ToastrModule } from 'toastr-ng2';
 import { Serialization } from './temperature.helper';
 import { Temperature } from './temperature.model';
 import { TemperatureService } from './temperature.service';
@@ -16,7 +18,7 @@ describe('Service: Temperature', () => {
         TestBed.configureTestingModule({
             providers: [
                 TemperatureService,
-
+   
                 MockBackend,
                 BaseRequestOptions,
                 {
@@ -26,7 +28,9 @@ describe('Service: Temperature', () => {
                 }
             ],
             imports: [
-                HttpModule
+                HttpModule,
+                ToastrModule.forRoot(),
+                SlimLoadingBarModule.forRoot(),
             ]
         });
     });
@@ -38,7 +42,7 @@ describe('Service: Temperature', () => {
 
     describe('getByAddress', () => {
 
-        it('should return error response', async(inject(
+        it('should return error response', (inject(
             [TemperatureService, MockBackend], (service, mockBackend) => {
 
                 mockBackend.connections.subscribe(conn => {
@@ -62,7 +66,7 @@ describe('Service: Temperature', () => {
                     });
             })));
 
-        it('should parse response', async(inject(
+        it('should parse response', (inject(
             [TemperatureService, MockBackend], (service, mockBackend) => {
 
                 mockBackend.connections.subscribe(conn => {
