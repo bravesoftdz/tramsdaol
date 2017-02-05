@@ -43,6 +43,10 @@ DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 
 Deploy like a boss
 
+Firt of all you need to set the corret repo in Heroku.
+
+
+
 git remote add heroku-client https://git.heroku.com/quiet-badlands-78231.git
 git remote add heroku-server https://git.heroku.com/guarded-coast-40901.git
 

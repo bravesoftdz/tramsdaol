@@ -28,7 +28,9 @@ import { TemperatureService } from './temperature/temperature.service';
     FormsModule,
     HttpModule,
 
-    AgmCoreModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBDkk7pWJpjlXwviCYyUnuBG4_jyUgVrVQ'
+    }),
     ToastrModule.forRoot(),
     SlimLoadingBarModule.forRoot(),
   ],
