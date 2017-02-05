@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q@(2+sm2tx0u29oywjtz9nh6e&=xwipcg)aw@wm=mp5-@atw6@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -148,6 +148,12 @@ REST_FRAMEWORK = {
 
 CORS_ORIGIN_ALLOW_ALL = True
 
+
+# This setting enable and disable data tracking for each request
 ENABLED_DATA_TRACKING = True
 
+
+# Allow to set the time cache to store objects in database.
+# This resource is important for improving application performance
+# because it avoids consulting the vendors API.
 CACHE_VALIDATION_TIME_MINUTES = 60

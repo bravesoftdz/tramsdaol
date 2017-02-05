@@ -9,10 +9,10 @@ from core.helpers import head_list
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
-        parser.add_argument('format', nargs='+', type=str)
-        parser.add_argument('ip', nargs='+', type=str)
+        parser.add_argument('format', nargs='+', type=str, help='file format to export')
+        parser.add_argument('ip', nargs='+', type=str, help='IP address filter')
 
-    help = 'Help text goes here'
+    help = 'Export the tracking data to a file format of a given IP address'
 
     def handle(self, **options):
         ip_address = head_list(options['ip'])

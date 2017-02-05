@@ -34,7 +34,7 @@ class ExportTracking():
 
     def run(self, ):
         '''
-        sdfsd
+        Export the tracking data to a file format
         '''
 
         format_map = {

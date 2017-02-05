@@ -1,3 +1,7 @@
+'''
+Allows you to define a set of weather server providers
+'''
+
 from django.conf import settings
 
 from inhoj.funcs import getni
@@ -5,12 +9,18 @@ from core.helpers import http_get, head_list
 
 
 class WeatherOpenWeatherMapService():
+    '''
+    OpenWeatherMap weater service
+    '''
 
     def __raise_for_invalid_result(self, data):
         if getni(data, 'cod') != 200:
             raise Exception(getni(data, 'message'))
 
     def get_temperature_by_geographic_coordinate(self, latitude, longitude):
+        '''
+        Find the temperature data for a given location (Geographic Coordinate)
+        '''
 
         appid = settings.OPENWEATHERMAP_API_KEY
         url = f'http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={appid}'

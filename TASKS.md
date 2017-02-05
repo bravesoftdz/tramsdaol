@@ -1,6 +1,7 @@
-[] Documentacao de classe e metodos
 
-[] doc setup applications
+[] tests
+
+[] doc setup application
 [] deploy heroku
 
 [x] Create a comectiom with PostgreSQL

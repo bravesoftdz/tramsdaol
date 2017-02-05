@@ -57,6 +57,10 @@ class CacheResult(models.Model):
 class CacheValidManager(models.Manager):
 
     def get_queryset(self):
+        '''
+            The caching mechanism is time-base
+            You can set the expiration time in "settings.CACHE_VALIDATION_TIME_MINUTES"
+        '''
         date_now = datetime.today()
         date_valid_cache = date_now - timedelta(minutes=settings.CACHE_VALIDATION_TIME_MINUTES)
         return super(CacheValidManager, self).get_queryset().filter(cache_date__range=(date_valid_cache, date_now))

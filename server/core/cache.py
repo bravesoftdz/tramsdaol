@@ -1,3 +1,9 @@
+'''
+This module implement a server side cache mechanisms to store API responses using databases
+
+More details in: https://en.wikipedia.org/wiki/Cache_(computing)
+'''
+
 from core.models import Track, CacheResult, GeographicCoordinate, CacheValidResult
 
 from core.services.geolocation import g
@@ -5,9 +11,6 @@ from core.services.weather import w
 
 
 def find_cache_geographic_coordinate(address):
-    """
-      Bla
-    """
 
     data = GeographicCoordinate.objects.filter(address__search=address).first()
     if data:
@@ -17,9 +20,6 @@ def find_cache_geographic_coordinate(address):
 
 
 def store_cache_geographic_coordinate(lat, lng, address):
-    """
-      Bla
-    """
 
     data = {
         'lat': lat,
@@ -31,9 +31,6 @@ def store_cache_geographic_coordinate(lat, lng, address):
 
 
 def find_cache_temperature(lat, lng):
-    """
-      Bla
-    """
 
     data = CacheValidResult.objects.filter(lat=lat, lng=lng).first()
     if data:
@@ -43,16 +40,25 @@ def find_cache_temperature(lat, lng):
 
 
 def store_cache_temperature(lat, lng, data):
-    """
-    Bla
-    """
-
     CacheResult.objects.update_or_create(lat=lat, lng=lng, defaults={'result': data})
 
 
 def search_temperature_by_address(search_address):
     """
-    ds
+    Search the temperature for a given address 
+
+    Main rules
+        Geographic Coordinate
+            All known geographic coordinates are cached in the GeographicCoordinate table.
+            Using Full Text Search the first step is to check if the address exists in the cache.
+            If there is no, the Geolocation Service as called to search the new geographic 
+            coordinates of a given address and store it in cache.
+            
+        Temperature 
+            The operation is the same as the geographical coordinate, the result is cached in CacheResult table.
+            The Weather Service is used to find the temperature data of the new address.
+            The temperature caching is time-base check the seetings "CACHE_VALIDATION_TIME_MINUTES".
+
     """
 
     lat, lng, address = find_cache_geographic_coordinate(search_address)
