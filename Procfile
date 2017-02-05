@@ -1,1 +1,1 @@
-client: twistd -n web -p $PORT --path client/dist
+web: twistd -n web -p $PORT --path client/dist
