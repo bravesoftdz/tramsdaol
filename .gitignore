@@ -2,7 +2,7 @@
 
 server/core/__pycache__
 server/core/migrations/__pycache__
-server/helios/helios/__pycache__
+server/helios/__pycache__
 
 server/core/management/__pycache__
 server/core/management/commands/__pycache__
