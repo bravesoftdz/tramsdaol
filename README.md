@@ -41,6 +41,10 @@ You need to define a envarioment varible called DATABASE_URL, with as:
 DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 ```
 
+Deploy 
+heroku	https://git.heroku.com/quiet-badlands-78231.git (fetch)
+heroku	https://git.heroku.com/quiet-badlands-78231.git (push)
+
 
 
 Fetures futuras
