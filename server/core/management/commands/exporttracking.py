@@ -5,6 +5,7 @@ from core.services.export import ExportTracking
 
 from core.helpers import head_list
 
+
 class Command(BaseCommand):
 
     def add_arguments(self, parser):

@@ -25,7 +25,6 @@ class TestGeoLocationGoogleService(unittest.TestCase):
                         'lng': -53.5167812,
                     }
                 }
-
             }]
         }
 
@@ -240,7 +239,7 @@ class TestCacheRules(unittest.TestCase):
         cache_filter_method.assert_called_with(lat=-12.55, lng=-90.54)
         owm_weather_method.assert_called_with(-12.55, -90.54)
         cache_create.assert_called_with(
-            lat=-12.55, lng=-90.54, defaults={'result':expected_data})
+            lat=-12.55, lng=-90.54, defaults={'result': expected_data})
 
         self.assertDictEqual(expected_data, data)
 
@@ -279,7 +278,7 @@ class TestCacheRules(unittest.TestCase):
         owm_weather_method.assert_called_with(-98.9812, -12.8721)
 
         cache_create.assert_called_with(
-            lat=-98.9812, lng=-12.8721, defaults={'result':expected_data})
+            lat=-98.9812, lng=-12.8721, defaults={'result': expected_data})
 
         self.assertDictEqual(expected_data, data)
 

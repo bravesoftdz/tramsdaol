@@ -6,8 +6,10 @@ from core import models
 class TrackAdmin(admin.ModelAdmin):
     pass
 
+
 class CacheResultAdmin(admin.ModelAdmin):
     pass
+
 
 class GeographicCoordinateAdmin(admin.ModelAdmin):
     pass

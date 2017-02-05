@@ -5,8 +5,13 @@ from django.conf import settings
 
 from core.models import Track
 
-# http://stackoverflow.com/questions/1305532/convert-python-dict-to-object
+
 class DictToObject:
+    '''
+
+        http://stackoverflow.com/questions/1305532/convert-python-dict-to-object
+    '''
+
     def __init__(self, **entries):
         self.__dict__.update(entries)
 
@@ -21,11 +26,13 @@ def http_get(url):
 
     return json.loads(response.content.decode('utf-8'))
 
+
 def head_list(value):
     '''
         blblbl
     '''
     return (value or [None])[0]
+
 
 def track(ip_address, term, result):
     '''
@@ -44,4 +51,3 @@ def is_valid_ipv4(ip):
     import re
     m = re.match(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$", ip)
     return bool(m) and all(map(lambda n: 0 <= int(n) <= 255, m.groups()))
-  

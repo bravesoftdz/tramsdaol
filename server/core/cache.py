@@ -3,6 +3,7 @@ from core.models import Track, CacheResult, GeographicCoordinate, CacheValidResu
 from core.services.geolocation import g
 from core.services.weather import w
 
+
 def find_cache_geographic_coordinate(address):
     """
       Bla
@@ -13,6 +14,7 @@ def find_cache_geographic_coordinate(address):
         return data.lat, data.lng, data.address
 
     return None, None, None
+
 
 def store_cache_geographic_coordinate(lat, lng, address):
     """
@@ -27,6 +29,7 @@ def store_cache_geographic_coordinate(lat, lng, address):
 
     GeographicCoordinate.objects.create(**data)
 
+
 def find_cache_temperature(lat, lng):
     """
       Bla
@@ -38,12 +41,13 @@ def find_cache_temperature(lat, lng):
 
     return None
 
+
 def store_cache_temperature(lat, lng, data):
     """
     Bla
     """
 
-    CacheResult.objects.update_or_create(lat=lat, lng=lng, defaults={'result':data})
+    CacheResult.objects.update_or_create(lat=lat, lng=lng, defaults={'result': data})
 
 
 def search_temperature_by_address(search_address):

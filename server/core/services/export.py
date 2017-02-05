@@ -5,6 +5,7 @@ import csv
 from core.models import Track
 from core.helpers import is_valid_ipv4
 
+
 class ExportTracking():
 
     def __init__(self, format, ip_addres):
@@ -22,12 +23,12 @@ class ExportTracking():
 
     def __to_csv(self, data):
         filename = self.__get_file_name('csv')
-        fieldnames =list(data[0].keys())
+        fieldnames = list(data[0].keys())
         with open(filename, 'w') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
             [writer.writerow(d) for d in data]
-           
+
     def __to_json(self, data):
         self.__save_file(json.dumps(data), 'json')
 
@@ -56,4 +57,3 @@ class ExportTracking():
             raise Exception('No  tracking found')
 
         format_map[self.format](data)
-

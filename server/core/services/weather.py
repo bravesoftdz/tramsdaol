@@ -17,13 +17,12 @@ class WeatherOpenWeatherMapService():
         data = http_get(url)
 
         self.__raise_for_invalid_result(data)
-        
-        city, country, degrees = getni(data, 'name'), getni(data, 'sys.country'), getni(data, 'main.temp') 
+        city, country, degrees = getni(data, 'name'), getni(data, 'sys.country'), getni(data, 'main.temp')
         return city, country, degrees
-        
 
 providers = {
     'openweathermap': WeatherOpenWeatherMapService
 }
 
-def w (provider): return providers[provider]()
+
+def w(provider): return providers[provider]()

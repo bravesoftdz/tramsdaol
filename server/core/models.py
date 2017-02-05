@@ -5,6 +5,7 @@ from django.conf import settings
 
 from datetime import datetime, timedelta
 
+
 class Track(models.Model):
 
     ip_address = models.GenericIPAddressField(protocol='IPv4', db_index=True)
@@ -23,7 +24,7 @@ class Track(models.Model):
             'ip_address': self.ip_address,
             'search_datetime': self.search_datetime.strftime('%Y-%m-%d %H:%M %Z'),
             'term': self.term,
-            'result': ', '.join('='.join((str(key),str(value))) for key, value in self.result.items()) 
+            'result': ', '.join('='.join((str(key), str(value))) for key, value in self.result.items())
         }
 
 
@@ -31,7 +32,7 @@ class GeographicCoordinate(models.Model):
 
     lat = models.FloatField(null=False, blank=False)
     lng = models.FloatField(null=False, blank=False)
-    address =  models.CharField(max_length=120, null=False, blank=False)
+    address = models.CharField(max_length=120, null=False, blank=False)
 
     class Meta:
         unique_together = ('lat', 'lng', 'address',)
@@ -63,6 +64,6 @@ class CacheValidManager(models.Manager):
 
 class CacheValidResult(CacheResult):
     objects = CacheValidManager()
-    
+
     class Meta:
         proxy = True

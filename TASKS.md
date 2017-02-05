@@ -1,6 +1,4 @@
 [] Documentacao de classe e metodos
-[] PyLint
-
 
 [] doc setup applications
 [] deploy heroku
