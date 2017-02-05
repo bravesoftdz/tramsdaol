@@ -1,9 +1,9 @@
 [] Documentacao de classe e metodos
 [] Layout frontend
-[] Tests
 [] freeze dependences
 [] get IP addres
 [] PyLint
+[] toats error
 
 [x] Create a comectiom with PostgreSQL
  	postgres -D /usr/local/var/postgres

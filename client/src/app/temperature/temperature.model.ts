@@ -14,6 +14,9 @@ export class Temperature {
     unit: TEMPERATURE_UNIT =  TEMPERATURE_UNIT.Fahrenheit;
 
     get do(): string{
+
+        if (!this.degrees) { return; }
+
         switch (this.unit) {
             case TEMPERATURE_UNIT.Fahrenheit:
                 return `${this.degrees}° F`

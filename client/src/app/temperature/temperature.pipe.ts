@@ -18,7 +18,12 @@ export class LabelPipe implements PipeTransform {
   transform(value: Temperature): string {
 
     if (value instanceof Temperature) {
-      return `${value.city}, ${value.country}`;  
+      if (value.city && value.country) {
+        return `${value.city}, ${value.country}`; 
+      } else {
+        return;
+      }
+       
     };
 
     throw new Error('Requires a object type Temperature as input');

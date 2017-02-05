@@ -3,10 +3,6 @@ from rest_framework.response import Response
 from rest_framework import status
 
 from core.cache import search_temperature_by_address
-
-from core.services.geolocation import g
-from core.services.weather import w
-
 from core.helpers import track
 
 
