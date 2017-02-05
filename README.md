@@ -43,8 +43,8 @@ DATABASE_URL=postgres://tramsdaol:123456@localhost:5432/tramsdaol
 
 Deploy like a boss
 
-git remote set-url heroku-client https://git.heroku.com/quiet-badlands-78231.git
-git remote set-url heroku-server https://git.heroku.com/guarded-coast-40901.git
+git remote add heroku-client https://git.heroku.com/quiet-badlands-78231.git
+git remote add heroku-server https://git.heroku.com/guarded-coast-40901.git
 
 Rename a correct Procile
 
