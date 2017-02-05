@@ -43,13 +43,7 @@ def store_cache_temperature(lat, lng, data):
     Bla
     """
 
-    data = {
-        'lat': lat,
-        'lng': lng,
-        'result': data,
-    }
-
-    CacheResult.objects.create(**data)
+    CacheResult.objects.update_or_create(lat=lat, lng=lng, defaults={'result':data})
 
 
 def search_temperature_by_address(search_address):
@@ -60,7 +54,7 @@ def search_temperature_by_address(search_address):
     lat, lng, address = find_cache_geographic_coordinate(search_address)
     if not all((lat, lng, address)):
         lat, lng, address = g('google').get_geographic_coordinate(search_address)
-        store_cache_geographic_coordinate(lat, lng, search_address)
+        store_cache_geographic_coordinate(lat, lng, address)
 
     data = find_cache_temperature(lat, lng)
     if not data:

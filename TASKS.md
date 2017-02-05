@@ -2,7 +2,8 @@
 [] Layout frontend
 [] Tests
 [] freeze dependences
-[] unique toggeter
+[] get IP addres
+[] PyLint
 
 [x] Create a comectiom with PostgreSQL
  	postgres -D /usr/local/var/postgres

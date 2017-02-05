@@ -1,8 +1,7 @@
+ {{temperature | label}} {{temperature.do}}
 
+<br> Address by Google: {{temperature.address}}
 
-
-
-            
-                {{temperature | label}}
-            
-                {{temperature.do}}
+<sebm-google-map [latitude]="temperature.lat" [longitude]="temperature.lng">
+    <sebm-google-map-marker [latitude]="temperature.lat" [longitude]="temperature.lng"></sebm-google-map-marker>
+</sebm-google-map>

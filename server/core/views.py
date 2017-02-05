@@ -11,8 +11,6 @@ from core.helpers import track
 
 
 class TemperatureView(ViewSet):
-    """
-    """
 
     def list(self, *args, **kwargs):
 

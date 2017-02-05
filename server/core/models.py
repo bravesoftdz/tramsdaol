@@ -33,22 +33,29 @@ class GeographicCoordinate(models.Model):
     lng = models.FloatField(null=False, blank=False)
     address =  models.CharField(max_length=120, null=False, blank=False)
 
+    class Meta:
+        unique_together = ('lat', 'lng', 'address',)
+
 
 class CacheResult(models.Model):
     lat = models.FloatField(null=False, blank=False)
     lng = models.FloatField(null=False, blank=False)
 
     created_at = models.DateTimeField(auto_now_add=True)
+    cache_date = models.DateTimeField(auto_now=True)
 
     result = JSONField(null=False, blank=True)
+
+    class Meta:
+        unique_together = ('lat', 'lng',)
 
 
 class CacheValidManager(models.Manager):
 
     def get_queryset(self):
         date_now = datetime.today()
-        date_valid_cache = date_now - timedelta(minutes=settings.CACHE_VALIDATION_TIME)
-        return super(CacheValidManager, self).get_queryset().filter(created_at__range=(date_valid_cache, date_now))
+        date_valid_cache = date_now - timedelta(minutes=settings.CACHE_VALIDATION_TIME_MINUTES)
+        return super(CacheValidManager, self).get_queryset().filter(cache_date__range=(date_valid_cache, date_now))
 
 
 class CacheValidResult(CacheResult):

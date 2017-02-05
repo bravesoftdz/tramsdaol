@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 import { AppComponent } from './app.component';
 import { TemperatureCardComponent } from './temperature/temperature-card.component';
 import { AddressSearchComponent } from './temperature/address-search.component';
@@ -23,6 +25,7 @@ import { TemperatureService } from './temperature/temperature.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    AgmCoreModule.forRoot(),
   ],
   providers: [
     TemperatureService,
