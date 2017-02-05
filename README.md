@@ -46,11 +46,21 @@ Deploy like a boss
 git remote set-url heroku-client https://git.heroku.com/quiet-badlands-78231.git
 git remote set-url heroku-server https://git.heroku.com/guarded-coast-40901.git
 
+Rename a correct Procile
+
+git push heroku-client master
+git push heroku-server master
+
+
+Server is deployed in: https://guarded-coast-40901.herokuapp.com/
+Client is deployed in: https://quiet-badlands-78231.herokuapp.com/ 
 
 Fetures futuras
 
 IPv6
 
+
+Django Admin user and password: loadsmart/1234qwer 
 
 References:
 

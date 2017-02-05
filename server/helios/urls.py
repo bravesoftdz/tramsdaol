@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 
+from django.conf import settings
+
 from rest_framework import routers
 from core.views import TemperatureView
 

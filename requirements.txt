@@ -9,3 +9,4 @@ meinheld==0.6.1
 psycopg2==2.6.2
 requests==2.13.0
 Twisted==16.6.0
+dj-static==0.0.6
