@@ -12,7 +12,9 @@ class TemperatureView(ViewSet):
 
     def __tracking(self, search_address, data):
         ip_address = get_ip(self.request)
-        track(ip_address, search_address, data)
+        # Need review to avoid empty IP 
+        if ip_address:
+            track(ip_address, search_address, data)
 
     def list(self, *args, **kwargs):
         '''

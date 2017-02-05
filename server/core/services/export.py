@@ -45,10 +45,10 @@ class ExportTracking():
         ALLOWED_FORMATS = list(format_map.keys())
 
         if self.format not in ALLOWED_FORMATS:
-            raise Exception(f'The {self.format} format is no recognised')
+            raise Exception(f'The "{self.format}" format is no recognised')
 
         if not is_valid_ipv4(self.ip_addres):
-            raise Exception(f'The IP address {self.ip_addres} is invalid')
+            raise Exception(f'The IP address "{self.ip_addres}" is invalid')
 
         tracks = Track.objects.filter(ip_address=self.ip_addres)
         data = [track.as_report() for track in tracks]
