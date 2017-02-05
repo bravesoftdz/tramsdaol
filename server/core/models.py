@@ -30,6 +30,7 @@ class GeographicCoordinate(models.Model):
     lat = models.FloatField(null=False, blank=False)
     lng = models.FloatField(null=False, blank=False)
     address = models.CharField(max_length=120, null=False, blank=False)
+    search_address = models.CharField(max_length=120, null=False, blank=False)
 
     class Meta:
         unique_together = ('lat', 'lng', 'address',)

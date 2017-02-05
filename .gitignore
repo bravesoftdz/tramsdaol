@@ -18,6 +18,7 @@ client/typings
 client/e2e/*.js
 client/e2e/*.js
 
+.DS_Store
 client/.DS_Store
 client/Thumbs.db
 client/src/.DS_Store

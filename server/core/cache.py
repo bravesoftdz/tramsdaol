@@ -5,25 +5,27 @@ More details in: https://en.wikipedia.org/wiki/Cache_(computing)
 '''
 
 from core.models import Track, CacheResult, GeographicCoordinate, CacheValidResult
-
+from django.contrib.postgres.search import SearchVector
 from core.services.geolocation import g
 from core.services.weather import w
 
 
 def find_cache_geographic_coordinate(address):
-    data = GeographicCoordinate.objects.filter(address__search=address).first()
+
+    data = GeographicCoordinate.objects.annotate(search=SearchVector('address', 'search_address')).filter(search=address).first()
     if data:
         return data.lat, data.lng, data.address
 
     return None, None, None
 
 
-def store_cache_geographic_coordinate(lat, lng, address):
+def store_cache_geographic_coordinate(lat, lng, address, search_address):
 
     data = {
         'lat': lat,
         'lng': lng,
         'address': address,
+        'search_address': search_address,
     }
 
     GeographicCoordinate.objects.create(**data)
@@ -59,13 +61,10 @@ def search_temperature_by_address(search_address):
             The temperature caching is time-base check the seetings "CACHE_VALIDATION_TIME_MINUTES".
 
     """
-
     lat, lng, address = find_cache_geographic_coordinate(search_address)
     if not all((lat, lng, address)):
         lat, lng, address = g('google').get_geographic_coordinate(search_address)
-        # Store in cache the raw address, because the Geolocation service 
-        # may return the same address for different search terms
-        store_cache_geographic_coordinate(lat, lng, search_address)
+        store_cache_geographic_coordinate(lat, lng, address, search_address)
 
     data = find_cache_temperature(lat, lng)
     if not data:
