@@ -18,7 +18,8 @@
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/toastr-ng2/toastr.css"
       ],
       "scripts": [],
       "environments": {
