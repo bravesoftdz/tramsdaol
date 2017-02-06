@@ -33,7 +33,7 @@ class GeographicCoordinate(models.Model):
     search_address = models.CharField(max_length=120, null=False, blank=False)
 
     class Meta:
-        unique_together = ('lat', 'lng', 'address',)
+        unique_together = ('lat', 'lng', 'address', 'search_address')
 
 
 class CacheResult(models.Model):

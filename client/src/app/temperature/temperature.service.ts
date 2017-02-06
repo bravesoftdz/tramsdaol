@@ -41,7 +41,7 @@ export class TemperatureService {
                 })
                 .catch( (error) => {
                     this.slimLoadingBarService.complete();
-                    this.toastrService.error('Opsss!', 'An error has occurred!');
+                    this.toastrService.warning('Opsss!', 'Address not found!');
                     return this.handleServerError(error)
                 })
 
