@@ -1,0 +1,2 @@
+inhoj==2.1.2
+requests==2.13.0
